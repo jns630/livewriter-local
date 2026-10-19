@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: livewriter-local
+    runtime: python
+    plan: starter
+    healthCheckPath: /rsd
+    buildCommand: pip install .
+    startCommand: python -m livewriter_local --cloud
+    disk:
+      name: livewriter-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: LW_USERNAME
+        sync: false
+      - key: LW_PASSWORD_HASH
+        sync: false

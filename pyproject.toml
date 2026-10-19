@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "livewriter-local"
+version = "0.1.0"
+description = "A local XML-RPC publishing server for Windows Live Writer"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.110,<1",
+  "uvicorn[standard]>=0.27,<1",
+  "httpx>=0.27,<1",
+  "google-auth-oauthlib>=1.2,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "httpx>=0.27,<1"]
+
+[project.scripts]
+livewriter-local = "livewriter_local.__main__:main"
+livewriter-local-export = "livewriter_local.archive_cli:export_main"
+livewriter-local-import = "livewriter_local.archive_cli:import_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+livewriter_local = ["static/*.css", "static/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

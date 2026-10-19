@@ -1,0 +1,16 @@
+{
+  "host": "127.0.0.1",
+  "allow_remote": false,
+  "port": 8080,
+  "data_dir": "data",
+  "blog_id": "livewriter-local",
+  "blog_name": "LiveWriter Local",
+  "blog_url": "http://127.0.0.1:8080/",
+  "xmlrpc_path": "/xmlrpc",
+  "rsd_path": "/rsd",
+  "username": "writer",
+  "password_hash": "REPLACE_WITH_A_SCRYPT_HASH_FROM_THE_INTERACTIVE_INITIALIZER",
+  "max_request_bytes": 2097152,
+  "max_upload_bytes": 20971520,
+  "diagnostic_logging": false
+}
